@@ -23,38 +23,24 @@ app.use((req, res, next) => {
     next();
 });
 
+app.get('/', (req, res) => {
+    res.sendStatus(200);
+});
+
 // Handle incoming POST requests to /webhook
-app.post('/webhook', (req, res) => {
-    logger('request  ' + CircularJSON.stringify(req));
-    logger('response  ' + CircularJSON.stringify(res));
+app.post('/webhook', async (req, res) => {
+    let requestBody = req.body;
+    let intent = requestBody.queryResult.intent.displayName;
+    let session = requestBody.session; // projects/zinnie-bot-fhvt/agent/sessions/18e21984-42f0-37e9-a5c2-29a53972f8ba
 
-    let responseText = handleTelegramMessage(req, res);
-    logger('responseText  ' + responseText);
     
-    // need to figure out how to response back to dialogflow intent message based on condition
-    return res.json(responseText);
-
-
-    // // Extract relevant data from the request
-    // const intent = req.body.queryResult.intent.displayName;
-    // const timezone = req.body.queryResult.parameters.timezone;
-
-    // // Perform desired actions based on the intent
-    // // if (intent === 'greeting') {
-    //     // Use the timezone to calculate current time in user's timezone
-    //     const currentTime = new Date().toLocaleString('en-US', {
-    //         timeZone: timezone
-    //     });
-
-    //     // Generate response message with personalized greeting
-    //     const response = {
-    //         fulfillmentText: `Hello! It's currently ${currentTime} in your timezone.`,
-    //     };
-
-    //     // Send response back to Dialogflow
-    //     res.json(response);
-    // // }
-    // // res.json();
+    if (intent == 'default.welcome') {
+        // Get greeting based on user timezone
+        let date = requestBody.originalDetectIntentRequest.payload.data.date;
+        let greet = getTelegramUserTimezoneGreet(date);
+        logger('default.welcome response start');
+        res.send(createTextResponse(greet));
+    }
 });
 
 // Start the server
@@ -89,24 +75,60 @@ function logger (text) {
 }
 
 // handle user timezone
-function handleTelegramMessage (req, res) {
-    const message = req.body.originalDetectIntentRequest.payload.data;
-
+function getTelegramUserTimezoneGreet (date) {
     // Get the user's timezone offset from the message date
-    const date = new Date(message.date * 1000);
-    const timezoneOffset = date.getTimezoneOffset();
+    const mdate = new Date(date * 1000);
+    const timezoneOffset = mdate.getTimezoneOffset();
 
     // Get the user's timezone name from the timezone offset
     const timezoneName = moment.tz.zone(moment.tz.guess()).abbr(timezoneOffset);
 
-    // Build a response based on the user's timezone
     let responseText;
+    let greeting;
     if (timezoneOffset < 0) {
-        responseText = `It's currently ${moment().utcOffset(timezoneOffset).format('h:mm A')} on the previous day in ${timezoneName}.`;
+        let time = moment().utcOffset(timezoneOffset);
+        let hour = time.hour();
+        if (hour < 12) {
+            greeting = 'Good Morning';
+        } else if (hour >= 12 && hour < 18) {
+            greeting = 'Good Afternoon';
+        } else {
+            greeting = 'Good Evening';
+        }
+        // responseText = `It's currently ${moment().utcOffset(timezoneOffset).format('h:mm A')} on the previous day in ${timezoneName}.`;
     } else {
-        responseText = `It's currently ${moment().utcOffset(timezoneOffset).format('h:mm A')} on ${timezoneName}.`;
+        let time = moment().utcOffset(timezoneOffset);
+        let hour = time.hour();
+        if (hour < 12) {
+            greeting = 'Good Morning';
+        } else if (hour >= 12 && hour < 18) {
+            greeting = 'Good Afternoon';
+        } else {
+            greeting = 'Good Evening';
+        }
+        // responseText = `It's currently ${moment().utcOffset(timezoneOffset).format('h:mm A')} on ${timezoneName}.`;
     }
 
-    // Send the response back to the user
-    return responseText;
+    return greeting;
+}
+
+function createTextResponse(textResponse) {
+    let response = {
+        "fulfillmentText": "This is a text response",
+        "fulfillmentMessages": [{
+            "text": {
+                "text": [
+                    textResponse
+                ]
+            }
+        }],
+        "payload": {
+            "telegram": {
+                "text": textResponse,
+                "parse_mode": "Markdown"
+            }
+
+        }
+    }
+    return response;
 }
