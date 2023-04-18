@@ -36,10 +36,9 @@ app.post('/webhook', async (req, res) => {
     
     if (intent == 'default.welcome') {
         // Get greeting based on user timezone
-        let date = requestBody.originalDetectIntentRequest.payload.data.date;
-        let greet = getTelegramUserTimezoneGreet(date);
-        logger('default.welcome response start');
-        res.send(createTextResponse(greet));
+        // let date = requestBody.originalDetectIntentRequest.payload.data.date;
+        // let greet = getTelegramUserTimezoneGreet(date);
+        res.send(createTextResponse(getGreetMsg()));
     }
 });
 
@@ -72,6 +71,22 @@ function logger (text) {
     fs.appendFile('./logs/app.log', log, (err) => {
         if (err) console.log(err);
     });
+}
+
+function getGreetMsg () {
+    let now = new Date();
+    let hour = now.getHours();
+
+    let greeting;
+
+    if (hour >= 5 && hour < 12) {
+        greeting = 'Good morning';
+    } else if (hour >= 12 && hour < 18) {
+        greeting = 'Good afternoon';
+    } else {
+        greeting = 'Good evening';
+    }
+    return greeting;
 }
 
 // handle user timezone
