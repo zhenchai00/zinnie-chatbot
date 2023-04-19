@@ -220,6 +220,6 @@ function getRandomGreetingMsg () {
 function telegramSendPhoto (chatId, imageUrl) {
     // const chatId = session.split('/').pop();
     const TOKEN = process.env.TELEGRAMBOT_TOKEN;
-    const bot = new TelegramBot('6236579778:AAEbrNWHRa9N2Zt9UFYRNSyHK2nS9npvKvI', {polling: true});
+    const bot = new TelegramBot(TOKEN, {polling: true});
     bot.sendPhoto(chatId,imageUrl);
 }
