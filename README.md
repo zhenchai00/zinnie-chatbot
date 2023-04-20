@@ -5,7 +5,7 @@ Dependencies that used are:
 ```
 Express
 Ngrok
-Pino Logger
+Dotenv
 Body Parser
 ```
 
