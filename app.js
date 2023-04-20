@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 app.post('/webhook', async (req, res) => {
     let requestBody = req.body;
     let intent = requestBody.queryResult.intent.displayName;
-    let session = requestBody.session; // projects/zinnie-bot-fhvt/agent/sessions/18e21984-42f0-37e9-a5c2-29a53972f8ba
+    let session = requestBody.session;
 
     if (intent == 'default.welcome') {
         let imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg/1280px-Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg';
@@ -82,6 +82,10 @@ ngrok.connect({
     }
 });
 
+/**
+ * This is to get the current datetime in utc format
+ * @returns {string} datetime in utc format
+ */
 getDateTime = () => {
     let dateObj = new Date;
     let date = dateObj.toISOString().split('T');
@@ -101,7 +105,7 @@ function logger (text) {
  * This is the get the system time and greet based on the system time
  * @returns {string} greeting with 'Good morning!', 'Good afternoon!', 'Good evening'
  */
-function getGreetMsg () {
+getGreetMsg = () => {
     let now = new Date();
     let hour = now.getHours();
 
@@ -117,69 +121,12 @@ function getGreetMsg () {
     return greeting;
 }
 
-// handle user timezone
-function getTelegramUserTimezoneGreet (date) {
-    // Get the user's timezone offset from the message date
-    const mdate = new Date(date * 1000);
-    const timezoneOffset = mdate.getTimezoneOffset();
-
-    // Get the user's timezone name from the timezone offset
-    const timezoneName = moment.tz.zone(moment.tz.guess()).abbr(timezoneOffset);
-
-    let responseText;
-    let greeting;
-    if (timezoneOffset < 0) {
-        let time = moment().utcOffset(timezoneOffset);
-        let hour = time.hour();
-        if (hour < 12) {
-            greeting = 'Good Morning';
-        } else if (hour >= 12 && hour < 18) {
-            greeting = 'Good Afternoon';
-        } else {
-            greeting = 'Good Evening';
-        }
-        // responseText = `It's currently ${moment().utcOffset(timezoneOffset).format('h:mm A')} on the previous day in ${timezoneName}.`;
-    } else {
-        let time = moment().utcOffset(timezoneOffset);
-        let hour = time.hour();
-        if (hour < 12) {
-            greeting = 'Good Morning';
-        } else if (hour >= 12 && hour < 18) {
-            greeting = 'Good Afternoon';
-        } else {
-            greeting = 'Good Evening';
-        }
-        // responseText = `It's currently ${moment().utcOffset(timezoneOffset).format('h:mm A')} on ${timezoneName}.`;
-    }
-
-    return greeting;
-}
-
-function createFulfillmentObject(type, text) {
-    let response;
-    return response;
-}
-
-/**
- * This is to generate the payload format for Google Dialogflow Telegram integration
- * @param {string} text 
- * @returns {Object} payload format
- */
-function generateTelegramPayload (text) {
-    let response = {
-        "telegram": {
-            "text": text,
-            "parse_mode": "Markdown"
-        }
-    }
-    return response;
-}
 
 /**
  * This is to get random greeting message with introduction of the chatbot
  * @returns {string} greet message with introduction
  */
-function getRandomGreetingMsg () {
+getRandomGreetingMsg = () => {
     let greet = getGreetMsg();
     let phrases = [
         greet + ' I\'m an educational chatbot that know about the Zinnia Flowers.',
