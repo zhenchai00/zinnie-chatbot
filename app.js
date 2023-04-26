@@ -13,6 +13,7 @@ const app = express();
 // Parse JSON request body
 app.use(bodyParser.json());
 
+// Logging incoming request
 app.use((req, res, next) => {
     const log = `${getDateTime()} ${req.method} ${req.path}\n`;
 
@@ -93,7 +94,10 @@ getDateTime = () => {
     return date[0] + ' ' + date[1];
 }
 
-function logger (text) {
+/**
+ * This is the temp logging 
+ */
+logger = (text) => {
     let date = getDateTime();
     let log = `${date} ${text} \n`;
     fs.appendFile('./logs/app.log', log, (err) => {
