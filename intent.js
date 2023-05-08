@@ -62,6 +62,8 @@ getRandomGreetingMsg = () => {
         greet + ' I\'m an educational chatbot that know about the Zinnia Flowers.',
         greet + ' I\'m a knowledgeable chatbot on Zinnia Flowers.',
         greet + ' I\'m an expert chatbot on Zinnia Flowers.',
+        greet + ' I\'m Zinnie, I know a lot about Zinnia flowers.',
+        greet + ' I\'m Zinnie, I am an expert on zinnia flowers!',
     ]
 
     let randomIndex = Math.floor(Math.random() * phrases.length);
