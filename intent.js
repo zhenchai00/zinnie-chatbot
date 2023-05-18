@@ -246,3 +246,31 @@ exports.getPlantInformationIntent = async (req, res) => {
     common.logger('getPlantInformationIntent response ' + CircularJSON.stringify(response[randomResIndex]));
     return response[randomResIndex];
 }
+
+// TODO: Planning to have telegram response with the option for select attention type with max 3 different output
+exports.getPlantAttentionIntent = async (requestBody, res) => {
+    let response1 = {
+        "fulfillmentText": "This is a text response",
+        "fulfillmentMessages": [
+            {
+                "text": {
+                    "text": [
+                        "Certainly! One of the general information about the Zinnia flower is they are annual plants, which means they grow, flower, and die within one growing season."
+                    ]
+                }
+            }
+        ],
+    };
+
+    let response = [
+        response1,
+        response2,
+        response3,
+        response4,
+        response5,
+        response6,
+        response7,
+    ]
+    let randomResIndex = Math.floor(Math.random() * response.length);
+    common.logger('getPlantAttentionIntent response ' + CircularJSON.stringify(response[randomResIndex]));
+}

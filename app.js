@@ -54,6 +54,11 @@ app.post('/webhook', async (req, res) => {
             response = await intent.getPlantInformationIntent(requestBody, res);
             res.send(response);
             break;
+
+        case 'plant.attention':
+            response = await intent.getPlantAttentionIntent(requestBody, res);
+            res.send(response);
+            break;
     
         default:
             break;
@@ -66,13 +71,14 @@ app.listen(8080, () => {
     console.log('Webhook server listening on http://localhost:8080');
 });
 
+// ATTENTION: The following function is to run by node script instead of using the ngrok application
 // Connection with Ngrok for getting the random domain URL
-ngrok.connect({
-    proto: 'http',
-    addr: process.env.PORT,
-}, (err, url) => {
-    if (err) {
-        console.error('Error while connecting Ngrok', err);
-        return new Error('Ngrok Failed');
-    }
-});
+// ngrok.connect({
+//     proto: 'http',
+//     addr: 8080,
+// }, (err, url) => {
+//     if (err) {
+//         console.error('Error while connecting Ngrok', err);
+//         return new Error('Ngrok Failed');
+//     }
+// });
