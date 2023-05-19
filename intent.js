@@ -247,30 +247,150 @@ exports.getPlantInformationIntent = async (req, res) => {
     return response[randomResIndex];
 }
 
-// TODO: Planning to have telegram response with the option for select attention type with max 3 different output
 exports.getPlantAttentionIntent = async (requestBody, res) => {
-    let response1 = {
-        "fulfillmentText": "This is a text response",
-        "fulfillmentMessages": [
+    let responseMsg = {
+        fulfillmentText: "This is a text response",
+        fulfillmentMessages: [
             {
-                "text": {
-                    "text": [
-                        "Certainly! One of the general information about the Zinnia flower is they are annual plants, which means they grow, flower, and die within one growing season."
+                text: {
+                    text: [
+                        "There's few things you need to pay attention to when planting zinnias which are: Sunlight, Soil, Watering, Fertilizing, Deadheading, Pests & Diseases and finally Spacing"
                     ]
+                }
+            },
+            {
+                payload: {
+                    telegram: {
+                        text: 'You may choose one of the options of attention',
+                        reply_markup: {
+                            // inline_keyboard: [
+                            //     [
+                            //         {
+                            //             text: 'Water',
+                            //             callback_data: 'water',
+                            //         },
+                            //         {
+                            //             text: 'Sunlight',
+                            //             callback_data: 'sunlight',
+                            //         },
+                            //     ],
+                            //     [
+                            //         {
+                            //             text: 'Soil',
+                            //             callback_data: 'soil',
+                            //         },
+                            //         {
+                            //             text: 'Fertilization',
+                            //             callback_data: 'fertilization',
+                            //         },
+                            //     ]
+                            // ]
+                        }
+                    }
                 }
             }
         ],
     };
 
+    let response1 = [
+        [
+            {
+                text: 'Water',
+                callback_data: 'water',
+            },
+            {
+                text: 'Sunlight',
+                callback_data: 'sunlight',
+            },
+        ],
+        [
+            {
+                text: 'Soil',
+                callback_data: 'soil',
+            },
+            {
+                text: 'Fertilization',
+                callback_data: 'fertilization',
+            },
+        ]
+    ];
+
+    let response2 = [
+        [
+            {
+                text: 'Pests & Diseases',
+                callback_data: 'pests & diseases',
+            },
+            {
+                text: 'Water',
+                callback_data: 'water',
+            },
+        ],
+        [
+            {
+                text: 'Spacing',
+                callback_data: 'spacing',
+            },
+            {
+                text: 'Deadheading',
+                callback_data: 'deadheading',
+            },
+        ],
+    ];
+
+    let response3 = [
+        [
+            {
+                text: 'Spacing',
+                callback_data: 'spacing',
+            },
+            {
+                text: 'Sunlight',
+                callback_data: 'sunlight',
+            },
+        ],
+        [
+            {
+                text: 'Pests & Diseases',
+                callback_data: 'pests & diseases',
+            },
+            {
+                text: 'Water',
+                callback_data: 'water',
+            },
+        ],
+    ];
+
+    let response4 = [
+        [
+            {
+                text: 'Sunlight',
+                callback_data: 'sunlight',
+            },
+            {
+                text: 'Soil',
+                callback_data: 'soil',
+            },
+        ],
+        [
+            {
+                text: 'Fertilization',
+                callback_data: 'fertilization',
+            },
+            {
+                text: 'Water',
+                callback_data: 'water',
+            },
+        ],
+    ];
     let response = [
         response1,
         response2,
         response3,
         response4,
-        response5,
-        response6,
-        response7,
     ]
     let randomResIndex = Math.floor(Math.random() * response.length);
     common.logger('getPlantAttentionIntent response ' + CircularJSON.stringify(response[randomResIndex]));
+    responseMsg.fulfillmentMessages[1].payload.telegram.reply_markup.inline_keyboard = response[randomResIndex];
+    return responseMsg;
 }
