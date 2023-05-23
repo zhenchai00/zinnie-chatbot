@@ -127,7 +127,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "Certainly! One of the general information about the Zinnia flower is Zinnia flowers are a popular garden plant, native to Mexico and Central America."
+                        "One of the general information about the Zinnia flower is Zinnia flowers are a popular garden plant, native to Mexico and Central America."
                     ]
                 }
             },
@@ -147,7 +147,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "Certainly! One of the general information about the Zinnia flower is Zinnia flowers are popular for use in cut flower arrangements due to their long vase life."
+                        "One of the general information about the Zinnia flower is Zinnia flowers are popular for use in cut flower arrangements due to their long vase life."
                     ]
                 }
             },
@@ -173,7 +173,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "Certainly! One of the general information about the Zinnia flower is they are also known for their attractant properties to pollinators such as butterflies and bees."
+                        "One of the general information about the Zinnia flower is they are also known for their attractant properties to pollinators such as butterflies and bees."
                     ]
                 }
             },
@@ -193,7 +193,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "Certainly! One of the general information about the Zinnia flower is the flowers come in a variety of colors, including red, yellow, orange, pink, purple, and white."
+                        "One of the general information about the Zinnia flower is the flowers come in a variety of colors, including red, yellow, orange, pink, purple, and white."
                     ]
                 }
             },
@@ -211,7 +211,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "Certainly! One of the general information about the Zinnia flower is Zinnia flowers prefer full sun and well-draining soil."
+                        "One of the general information about the Zinnia flower is Zinnia flowers prefer full sun and well-draining soil."
                     ]
                 }
             }
@@ -224,7 +224,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "Certainly! One of the general information about the Zinnia flower is they are easy to grow from seed and can bloom throughout the summer and fall."
+                        "One of the general information about the Zinnia flower is they are easy to grow from seed and can bloom throughout the summer and fall."
                     ]
                 }
             }
@@ -237,7 +237,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "Certainly! One of the general information about the Zinnia flower is they are annual plants, which means they grow, flower, and die within one growing season."
+                        "One of the general information about the Zinnia flower is they are annual plants, which means they grow, flower, and die within one growing season."
                     ]
                 }
             }
