@@ -45,11 +45,11 @@ getGreetMsg = () => {
     let greeting;
 
     if (hour >= 5 && hour < 12) {
-        greeting = 'Good morning!';
+        greeting = 'Good morning';
     } else if (hour >= 12 && hour < 18) {
-        greeting = 'Good afternoon!';
+        greeting = 'Good afternoon';
     } else {
-        greeting = 'Good evening!';
+        greeting = 'Good evening';
     }
     return greeting;
 }
@@ -68,8 +68,7 @@ getRandomGreetingMsg = () => {
         // greet + ' I\'m Zinnie. An expert chatbot on Zinnia Flowers.',
         // greet + ' I\'m Zinnie, I know a lot about Zinnia flowers.',
         // greet + ' I\'m Zinnie, I am an expert on zinnia flowers!',
-        
-        greet + ' This is Zinnie here! I\'m an expert on flower "Zinnia", I able to provide information and guidelines regarding procedures and precautions on how to take care of Zinnias.',
+        greet + ', this is Zinnie here! I am an expert on the flower "Zinnia", I provide information and guidelines regarding the procedures and precautions on how to take care of Zinnias.',
 
         // greet + ' I\'m an educational chatbot that know about the Zinnia Flowers.',
         // greet + ' I\'m a knowledgeable chatbot on Zinnia Flowers.',
