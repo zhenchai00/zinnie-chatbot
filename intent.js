@@ -17,17 +17,17 @@ exports.getWelcomeIntent = async (req, res) => {
                 }
             },
             {
+                "text": {
+                    "text": [
+                        "Could I get your name before we get things started? 😄"
+                    ]
+                }
+            },
+            {
                 "image": {
                     "imageUri": imageUrl
                 }
             },
-            {
-                "text": {
-                    "text": [
-                        "Could I get your name before we get things started? ☺️"
-                    ]
-                }
-            }
         ],
     }
     common.logger('getWelcomeIntent response' + CircularJSON.stringify(response));
@@ -68,7 +68,7 @@ getRandomGreetingMsg = () => {
         // greet + ' I\'m Zinnie. An expert chatbot on Zinnia Flowers.',
         // greet + ' I\'m Zinnie, I know a lot about Zinnia flowers.',
         // greet + ' I\'m Zinnie, I am an expert on zinnia flowers!',
-        greet + ', this is Zinnie here! I am an expert on the flower "Zinnia", I provide information and guidelines regarding the procedures and precautions on how to take care of Zinnias.',
+        greet + ', this is Zinnie here! I am an expert on the flower "Zinnia" 🏵️, I provide information and guidelines regarding the procedures and precautions on how to take care of Zinnias.',
 
         // greet + ' I\'m an educational chatbot that know about the Zinnia Flowers.',
         // greet + ' I\'m a knowledgeable chatbot on Zinnia Flowers.',
