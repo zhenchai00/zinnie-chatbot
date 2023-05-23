@@ -5,3 +5,4 @@ https://i.ibb.co/4fpYZHt/zinnia-water1.png
 https://i.ibb.co/ygBf8c6/zinnia-spacing.png
 https://i.ibb.co/10wMgHK/zinnia-deadheading.png
 https://i.ibb.co/PCbFTZq/zinnia-soil.png
+https://i.ibb.co/Kx0Z6V3/zinnia-flower.png

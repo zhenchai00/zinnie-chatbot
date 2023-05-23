@@ -2,8 +2,10 @@ const CircularJSON = require('circular-json');
 const common = require('./common.js');
 
 exports.getWelcomeIntent = async (req, res) => {
-    let imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg/1280px-Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg';
+    // let imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg/1280px-Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg';
     // let imageUrl = './images/zinnia-flower.jpg';
+    let imageUrl = 'https://i.ibb.co/Kx0Z6V3/zinnia-flower.png';
+
     let response = {
         "fulfillmentText": "This is a text response",
         "fulfillmentMessages": [
@@ -22,7 +24,7 @@ exports.getWelcomeIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "Can I get your name?"
+                        "Could I get your name before we get things started? ☺️"
                     ]
                 }
             }
@@ -59,11 +61,21 @@ getGreetMsg = () => {
 getRandomGreetingMsg = () => {
     let greet = getGreetMsg();
     let phrases = [
-        greet + ' I\'m an educational chatbot that know about the Zinnia Flowers.',
-        greet + ' I\'m a knowledgeable chatbot on Zinnia Flowers.',
-        greet + ' I\'m an expert chatbot on Zinnia Flowers.',
-        greet + ' I\'m Zinnie, I know a lot about Zinnia flowers.',
-        greet + ' I\'m Zinnie, I am an expert on zinnia flowers!',
+        // greet + ' This is a knowledgeable chatbot speaking here, Zinnie. \n I provide information on Zinnia flowers and guidelines on how to take care of them. Can I please get your name ',
+
+        // greet + ' I\'m Zinnie. An educational chatbot that know about the Zinnia Flowers.',
+        // greet + ' I\'m Zinnie. A knowledgeable chatbot on Zinnia Flowers.',
+        // greet + ' I\'m Zinnie. An expert chatbot on Zinnia Flowers.',
+        // greet + ' I\'m Zinnie, I know a lot about Zinnia flowers.',
+        // greet + ' I\'m Zinnie, I am an expert on zinnia flowers!',
+        
+        greet + ' This is Zinnie here! I\'m an expert on flower "Zinnia", I able to provide information and guidelines regarding procedures and precautions on how to take care of Zinnias.',
+
+        // greet + ' I\'m an educational chatbot that know about the Zinnia Flowers.',
+        // greet + ' I\'m a knowledgeable chatbot on Zinnia Flowers.',
+        // greet + ' I\'m an expert chatbot on Zinnia Flowers.',
+        // greet + ' I\'m Zinnie, I know a lot about Zinnia flowers.',
+        // greet + ' I\'m Zinnie, I am an expert on zinnia flowers!',
     ]
 
     let randomIndex = Math.floor(Math.random() * phrases.length);
