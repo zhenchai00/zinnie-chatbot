@@ -97,7 +97,7 @@ exports.getPlantOriginIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "The Zinnia flower is native to Mexico and parts of Central America. It was introduced to Europe in the 1700s and has since been widely cultivated as an ornamental plant around the world."
+                        "The Zinnia flower has its roots in the sun-kissed lands of Mexico and Central America. These colorful charmers embarked on a thrilling journey across the oceans, making their debut in Europe in the 1700s. Ever since then, Zinnias has been spreading joy and dazzling gardeners all around the world."
                     ]
                 }
             },
