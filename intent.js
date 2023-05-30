@@ -127,7 +127,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "One of the general information about the Zinnia flower is Zinnia flowers are a popular garden plant, native to Mexico and Central America."
+                        "Zinnias are widely favoured as one of the popular garden plants, that are native to Mexico and Central America, other than Dahlia, Mayfield's Sunflower, Orchids, and Hibiscus."
                     ]
                 }
             },
@@ -147,7 +147,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "One of the general information about the Zinnia flower is Zinnia flowers are popular for use in cut flower arrangements due to their long vase life."
+                        "Zinnias are extensively sought after for their impressive longevity vase life, making them a popular choice among garden enthusiasts for cut flower arrangements."
                     ]
                 }
             },
@@ -173,7 +173,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "One of the general information about the Zinnia flower is they are also known for their attractant properties to pollinators such as butterflies and bees."
+                        "Zinnia flowers are renowned for their ability to attract pollinators, including butterflies and bees, making them highly valued for their flower enticing properties."
                     ]
                 }
             },
@@ -193,7 +193,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "One of the general information about the Zinnia flower is the flowers come in a variety of colors, including red, yellow, orange, pink, purple, and white."
+                        "Zinnia flowers exhibit a remarkable array of colors, encompassing shades of red, yellow, orange, pink, purple, and white, providing a vibrant spectrum of gardening options to delight garden enthusiasts."
                     ]
                 }
             },
@@ -211,7 +211,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "One of the general information about the Zinnia flower is Zinnia flowers prefer full sun and well-draining soil."
+                        "Zinnia flowers thrive in optimal conditions of full sun exposure and well-drained soil, which showcast their preference for abundant sunlight and soil with excellent drainage."
                     ]
                 }
             }
@@ -224,7 +224,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "One of the general information about the Zinnia flower is they are easy to grow from seed and can bloom throughout the summer and fall."
+                        "Zinnia flowers are well known for their ease of cultivation from seeds. They bloom profusely from summer to fall, ensuring a vibrant display of colors throughout the seasons, which offers a rewarding experience for gardeners in addition."
                     ]
                 }
             }
@@ -237,7 +237,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "One of the general information about the Zinnia flower is they are annual plants, which means they grow, flower, and die within one growing season."
+                        "Zinnia flowers are classified as annual plants, they undergo their life cycle - growth, blooming, and wilt, just within a single growing season. Hence, their presence in the garden always sends out a sense of fleeting beauty."
                     ]
                 }
             }
