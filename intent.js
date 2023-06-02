@@ -232,7 +232,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "https://youtu.be/tXbt1vCHKA4"
+                        "https://www.youtube.com/watch?v=tXbt1vCHKA4"
                     ]
                 }
             },
@@ -252,7 +252,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "https://youtu.be/tXbt1vCHKA4"
+                        "https://www.youtube.com/watch?v=tXbt1vCHKA4"
                     ]
                 }
             },
@@ -272,7 +272,7 @@ exports.getPlantInformationIntent = async (req, res) => {
             {
                 "text": {
                     "text": [
-                        "https://youtu.be/tXbt1vCHKA4"
+                        "https://www.youtube.com/watch?v=tXbt1vCHKA4"
                     ]
                 }
             },
@@ -338,7 +338,7 @@ exports.getPlantAttentionIntent = async (requestBody, res) => {
             {
                 text: {
                     text: [
-                        "https://youtu.be/co7mOgvDVL4"
+                        "https://www.youtube.com/watch?v=co7mOgvDVL4"
                     ]
                 }
             },
