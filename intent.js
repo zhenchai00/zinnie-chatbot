@@ -16,13 +16,13 @@ exports.getWelcomeIntent = async (req, res) => {
                     ]
                 }
             },
-            {
-                "text": {
-                    "text": [
-                        "Could I get your name before we get things started? 😄"
-                    ]
-                }
-            },
+            // {
+            //     "text": {
+            //         "text": [
+            //             "Could I get your name before we get things started? 😄"
+            //         ]
+            //     }
+            // },
             {
                 "image": {
                     "imageUri": imageUrl
