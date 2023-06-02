@@ -16,13 +16,13 @@ exports.getWelcomeIntent = async (req, res) => {
                     ]
                 }
             },
-            // {
-            //     "text": {
-            //         "text": [
-            //             "Could I get your name before we get things started? 😄"
-            //         ]
-            //     }
-            // },
+            {
+                "text": {
+                    "text": [
+                        "Could I get your name before we get things started? 😄"
+                    ]
+                }
+            },
             {
                 "image": {
                     "imageUri": imageUrl
@@ -60,12 +60,13 @@ getGreetMsg = () => {
  */
 getRandomGreetingMsg = () => {
     let greet = getGreetMsg();
-    let phrases = [
-        greet + '. Can I please get your name first? 😄',
-    ]
+    // let phrases = [
+    //     greet + '. Can I please get your name first? 😄',
+    // ]
 
-    let randomIndex = Math.floor(Math.random() * phrases.length);
-    return phrases[randomIndex];
+    // let randomIndex = Math.floor(Math.random() * phrases.length);
+    // return phrases[randomIndex];
+    return greet;
 }
 
 /**
