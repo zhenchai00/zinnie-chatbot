@@ -61,6 +61,20 @@ getGreetMsg = () => {
 getRandomGreetingMsg = () => {
     let greet = getGreetMsg();
     let phrases = [
+        greet + '. Can I please get your name first?',
+    ]
+
+    let randomIndex = Math.floor(Math.random() * phrases.length);
+    return phrases[randomIndex];
+}
+
+/**
+ * This is to get random greeting message with introduction of the chatbot
+ * @returns {string} greet message with introduction
+ */
+getRandomGreetingMsg1 = () => {
+    let greet = getGreetMsg();
+    let phrases = [
         // greet + ' This is a knowledgeable chatbot speaking here, Zinnie. \n I provide information on Zinnia flowers and guidelines on how to take care of them. Can I please get your name ',
 
         // greet + ' I\'m Zinnie. An educational chatbot that know about the Zinnia Flowers.',
