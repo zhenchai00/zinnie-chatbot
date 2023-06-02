@@ -61,7 +61,7 @@ getGreetMsg = () => {
 getRandomGreetingMsg = () => {
     let greet = getGreetMsg();
     let phrases = [
-        greet + '. Can I please get your name first?',
+        greet + '. Can I please get your name first? 😄',
     ]
 
     let randomIndex = Math.floor(Math.random() * phrases.length);
@@ -228,7 +228,14 @@ exports.getPlantInformationIntent = async (req, res) => {
                         "Zinnia flowers thrive in optimal conditions of full sun exposure and well-drained soil, which showcast their preference for abundant sunlight and soil with excellent drainage."
                     ]
                 }
-            }
+            },
+            {
+                "text": {
+                    "text": [
+                        "https://youtu.be/tXbt1vCHKA4"
+                    ]
+                }
+            },
         ],
     };
 
@@ -241,7 +248,14 @@ exports.getPlantInformationIntent = async (req, res) => {
                         "Zinnia flowers are well known for their ease of cultivation from seeds. They bloom profusely from summer to fall, ensuring a vibrant display of colors throughout the seasons, which offers a rewarding experience for gardeners in addition."
                     ]
                 }
-            }
+            },
+            {
+                "text": {
+                    "text": [
+                        "https://youtu.be/tXbt1vCHKA4"
+                    ]
+                }
+            },
         ],
     };
 
@@ -254,7 +268,14 @@ exports.getPlantInformationIntent = async (req, res) => {
                         "Zinnia flowers are classified as annual plants, they undergo their life cycle - growth, blooming, and wilt, just within a single growing season. Hence, their presence in the garden always sends out a sense of fleeting beauty."
                     ]
                 }
-            }
+            },
+            {
+                "text": {
+                    "text": [
+                        "https://youtu.be/tXbt1vCHKA4"
+                    ]
+                }
+            },
         ],
     };
 
@@ -286,7 +307,7 @@ exports.getPlantAttentionIntent = async (requestBody, res) => {
             {
                 payload: {
                     telegram: {
-                        text: 'You may choose one of the options of attention',
+                        text: 'You may choose one of the options of attention or check out the YouTube video',
                         reply_markup: {
                             // inline_keyboard: [
                             //     [
@@ -313,7 +334,14 @@ exports.getPlantAttentionIntent = async (requestBody, res) => {
                         }
                     }
                 }
-            }
+            },
+            {
+                text: {
+                    text: [
+                        "https://youtu.be/co7mOgvDVL4"
+                    ]
+                }
+            },
         ],
     };
 
