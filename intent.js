@@ -2,8 +2,6 @@ const CircularJSON = require('circular-json');
 const common = require('./common.js');
 
 exports.getWelcomeIntent = async (req, res) => {
-    // let imageUrl = 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg/1280px-Zinnienbl%C3%BCte_Zinnia_elegans_stack15_20190722-RM-7222254.jpg';
-    // let imageUrl = './images/zinnia-flower.jpg';
     let imageUrl = 'https://i.ibb.co/Kx0Z6V3/zinnia-flower.png';
 
     let response = {
@@ -60,48 +58,14 @@ getGreetMsg = () => {
  */
 getRandomGreetingMsg = () => {
     let greet = getGreetMsg();
-    // let phrases = [
-    //     greet + '. Can I please get your name first? 😄',
-    // ]
-
-    // let randomIndex = Math.floor(Math.random() * phrases.length);
-    // return phrases[randomIndex];
     return greet;
 }
 
-/**
- * This is to get random greeting message with introduction of the chatbot
- * @returns {string} greet message with introduction
- */
-getRandomGreetingMsg1 = () => {
-    let greet = getGreetMsg();
-    let phrases = [
-        // greet + ' This is a knowledgeable chatbot speaking here, Zinnie. \n I provide information on Zinnia flowers and guidelines on how to take care of them. Can I please get your name ',
-
-        // greet + ' I\'m Zinnie. An educational chatbot that know about the Zinnia Flowers.',
-        // greet + ' I\'m Zinnie. A knowledgeable chatbot on Zinnia Flowers.',
-        // greet + ' I\'m Zinnie. An expert chatbot on Zinnia Flowers.',
-        // greet + ' I\'m Zinnie, I know a lot about Zinnia flowers.',
-        // greet + ' I\'m Zinnie, I am an expert on zinnia flowers!',
-        greet + ', this is Zinnie here! I am an expert on the flower "Zinnia" 🏵️, I provide information and guidelines regarding the procedures and precautions on how to take care of Zinnias.',
-
-        // greet + ' I\'m an educational chatbot that know about the Zinnia Flowers.',
-        // greet + ' I\'m a knowledgeable chatbot on Zinnia Flowers.',
-        // greet + ' I\'m an expert chatbot on Zinnia Flowers.',
-        // greet + ' I\'m Zinnie, I know a lot about Zinnia flowers.',
-        // greet + ' I\'m Zinnie, I am an expert on zinnia flowers!',
-    ]
-
-    let randomIndex = Math.floor(Math.random() * phrases.length);
-    return phrases[randomIndex];
-}
 
 exports.getPlantOriginIntent = async (req, res) => {
     let gardenImg = [
         'https://www.swallowtailgardenseeds.com/flowers/zinnias/zinnia-magellan-mix.jpg',
         'https://extension.umn.edu/sites/extension.umn.edu/files/zinnia-MagellanOrange.jpg',
-        // './images/zinnia-garden-usa.jpg',
-        // './images/zinnia-magellan-garden.jpg',
     ]
     let randomGardenImg = Math.floor(Math.random() * gardenImg.length);
     gardenImg = gardenImg[randomGardenImg];
@@ -131,8 +95,6 @@ exports.getPlantInformationIntent = async (req, res) => {
     let gardenImg = [
         'https://www.swallowtailgardenseeds.com/flowers/zinnias/zinnia-magellan-mix.jpg',
         'https://extension.umn.edu/sites/extension.umn.edu/files/zinnia-MagellanOrange.jpg',
-        // './images/zinnia-garden-usa.jpg',
-        // './images/zinnia-magellan-garden.jpg',
     ]
     let randomGardenImg = Math.floor(Math.random() * gardenImg.length);
     gardenImg = gardenImg[randomGardenImg];
@@ -155,7 +117,6 @@ exports.getPlantInformationIntent = async (req, res) => {
     };
 
     let cutFlowerImg = 'https://lifewithnealandsuz.com/wp-content/uploads/2020/07/IMG_8185-1200x1429.jpg';
-    // let cutFlowerImg = './images/zinnia-cut-flower.jpg';
     let response2 = {
         "fulfillmentText": "This is a text response",
         "fulfillmentMessages": [
@@ -177,8 +138,6 @@ exports.getPlantInformationIntent = async (req, res) => {
     let pollinatorsImg = [
         'https://wildyards.com/wp-content/uploads/2022/05/do-butterflies-like-zinnias-1140x694.jpg ',
         'https://upload.wikimedia.org/wikipedia/commons/e/ed/Bee_on_Zinnia_elegans_near_Kings_Park_Eternal_Flame-1-.jpg',
-        // './images/zinnia-bee.jpg',
-        // './images/zinnia-butterfly.jpg',
     ];
     let randomPollinatorsImg = Math.floor(Math.random() * pollinatorsImg.length);
     pollinatorsImg = pollinatorsImg[randomPollinatorsImg];
@@ -201,7 +160,6 @@ exports.getPlantInformationIntent = async (req, res) => {
     };
 
     let colorZinniaImg = 'https://www.applewoodseed.com/wp-content/uploads/2016/12/ZELE-1202.jpg';
-    // let colorZinniaImg = './images/zinnia-all-color-img.jpg';
     let response4 = {
         "fulfillmentText": "This is a text response",
         "fulfillmentMessages": [
@@ -310,28 +268,6 @@ exports.getPlantAttentionIntent = async (requestBody, res) => {
                     telegram: {
                         text: 'You may choose one of the options of attention or check out the YouTube video',
                         reply_markup: {
-                            // inline_keyboard: [
-                            //     [
-                            //         {
-                            //             text: 'Water',
-                            //             callback_data: 'water',
-                            //         },
-                            //         {
-                            //             text: 'Sunlight',
-                            //             callback_data: 'sunlight',
-                            //         },
-                            //     ],
-                            //     [
-                            //         {
-                            //             text: 'Soil',
-                            //             callback_data: 'soil',
-                            //         },
-                            //         {
-                            //             text: 'Fertilization',
-                            //             callback_data: 'fertilization',
-                            //         },
-                            //     ]
-                            // ]
                         }
                     }
                 }
